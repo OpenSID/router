@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Welcome to Luthier-CI!
+ * Welcome to OpenSID-CI!
  *
  * This is your main route file. Put all your HTTP-Based routes here using the static
  * Route class methods
@@ -19,7 +19,7 @@
  */
 
 Route::get('/', function(){
-   luthier_info();
+   my_info();
 })->name('homepage');
 
 Route::set('404_override', function(){

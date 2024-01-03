@@ -3,14 +3,14 @@
 /**
  * SimpleAuth library
  *
- * This is a wrapper of Luthier-CI Standard Auth Library (Luthier\Auth) with some
+ * This is a wrapper of OpenSID-CI Standard Auth Library (OpenSID\Auth) with some
  * useful functions.
  *
  * @autor Anderson Salas <anderson@ingenia.me>
  * @licence MIT
  */
 
-class Simple_auth extends Luthier\Auth\SimpleAuth\Library
+class Simple_auth extends OpenSID\Auth\SimpleAuth\Library
 {
 
 }

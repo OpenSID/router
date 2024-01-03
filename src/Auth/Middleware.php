@@ -1,29 +1,29 @@
 <?php
 
 /*
- * Luthier CI
+ * OpenSID CI
  *
  * (c) 2018 Ingenia Software C.A
  *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
+ * This file is part of OpenSID CI, a plugin for CodeIgniter 3. See the LICENSE
  * file for copyright information and license details
  */
 
-namespace Luthier\Auth;
+namespace OpenSID\Auth;
 
-use Luthier\Auth;
-use Luthier\Middleware as LuthierMiddleware;
-use Luthier\MiddlewareInterface;
-use Luthier\Auth\Exception\UserNotFoundException;
-use Luthier\Auth\Exception\InactiveUserException;
-use Luthier\Auth\Exception\UnverifiedUserException;
-use Luthier\Route;
-use Luthier\Debug;
+use OpenSID\Auth;
+use OpenSID\Middleware as OpenSIDMiddleware;
+use OpenSID\MiddlewareInterface;
+use OpenSID\Auth\Exception\UserNotFoundException;
+use OpenSID\Auth\Exception\InactiveUserException;
+use OpenSID\Auth\Exception\UnverifiedUserException;
+use OpenSID\Route;
+use OpenSID\Debug;
 
 /**
  * Controller-based authentication middleware
  * 
- * This is a special middleware used internally by Luthier CI. Handles
+ * This is a special middleware used internally by OpenSID CI. Handles
  * the Controller-based authentication and dispatches special authentication
  * events during the process.
  * 
@@ -34,7 +34,7 @@ abstract class Middleware implements MiddlewareInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\MiddlewareInterface::run()
+     * @see \OpenSID\MiddlewareInterface::run()
      */
     final public function run($userProvider)
     {
@@ -42,7 +42,7 @@ abstract class Middleware implements MiddlewareInterface
             '>>> USING CONTROLLER-BASED AUTH ['
             . get_class(ci()) . ', '
             . get_class($userProvider) . ', '
-            . get_class( is_object(ci()->getMiddleware()) ? ci()->getMiddleware() : LuthierMiddleware::load(ci()->getMiddleware()) ) . ' ]',
+            . get_class( is_object(ci()->getMiddleware()) ? ci()->getMiddleware() : OpenSIDMiddleware::load(ci()->getMiddleware()) ) . ' ]',
             'info', 'auth');
 
         $authLoginRoute = config_item('auth_login_route') !== null

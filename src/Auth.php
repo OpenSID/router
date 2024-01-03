@@ -1,21 +1,21 @@
 <?php
 
 /*
- * Luthier CI
+ * OpenSID CI
  *
  * (c) 2018 Ingenia Software C.A
  *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
+ * This file is part of OpenSID CI, a plugin for CodeIgniter 3. See the LICENSE
  * file for copyright information and license details
  */
 
-namespace Luthier;
+namespace OpenSID;
 
-use Luthier\Auth\UserInterface;
-use Luthier\Auth\UserProviderInterface;
+use OpenSID\Auth\UserInterface;
+use OpenSID\Auth\UserProviderInterface;
 
 /**
- * Luthier CI authentication class
+ * OpenSID CI authentication class
  * 
  * @author Anderson Salas <anderson@ingenia.me>
  */
@@ -40,7 +40,7 @@ class Auth
      *
      * @param  string $userClass User class name
      *
-     * @return \Luthier\Auth\UserProviderInterface
+     * @return \OpenSID\Auth\UserProviderInterface
      */
     public static function loadUserProvider($userProviderClass)
     {

@@ -1,32 +1,23 @@
 <?php
 
-/*
- * Luthier CI
- *
- * (c) 2018 Ingenia Software C.A
- *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
- * file for copyright information and license details
- */
+namespace OpenSID;
 
-namespace Luthier;
-
-use Luthier\Exception\RouteNotFoundException;
-use Luthier\RouteBuilder as Route;
-use Luthier\Auth\Dispatcher as AuthDispatcher;
+use OpenSID\Exception\RouteNotFoundException;
+use OpenSID\RouteBuilder as Route;
+use OpenSID\Auth\Dispatcher as AuthDispatcher;
 use DebugBar\DataCollector\MessagesCollector;
 
 /**
- * Defines and returns all the required Luthier CI hooks at framework startup
+ * Defines and returns all the required OpenSID CI hooks at framework startup
  * 
  * @author Anderson Salas <anderson@ingenia.me>
  */
 class Hook
 {    
     /**
-     * Gets the Luthier CI hooks
+     * Gets the OpenSID CI hooks
      * 
-     * @param string $config Luthier CI configuration
+     * @param string $config OpenSID CI configuration
      * 
      * @return array
      */
@@ -81,8 +72,8 @@ class Hook
      */
     private static function preSystemHook($config)
     {
-        define('LUTHIER_CI_VERSION', '1.0.5');
-        define('LUTHIER_CI_DIR', __DIR__);
+        define('OpenSID_CI_VERSION', '1.0.5');
+        define('OpenSID_CI_DIR', __DIR__);
 
         $isAjax =  isset($_SERVER['HTTP_X_REQUESTED_WITH']) 
                     && (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) 
@@ -144,10 +135,10 @@ class Hook
             Route::set('default_controller', Route::DEFAULT_CONTROLLER);
         }
 
-        //  [>= v0.3.0] Deleting old Luthier default controller (if exists)
-        if( file_exists(APPPATH . '/controllers/Luthier.php'))
+        //  [>= v0.3.0] Deleting old OpenSID default controller (if exists)
+        if( file_exists(APPPATH . '/controllers/OpenSID.php'))
         {
-            unlink(APPPATH . '/controllers/Luthier.php');
+            unlink(APPPATH . '/controllers/OpenSID.php');
         }
 
         if( !file_exists(APPPATH . '/controllers/' .  Route::DEFAULT_CONTROLLER . '.php'))
@@ -169,7 +160,7 @@ class Hook
             Debug::init();
             Debug::addCollector(new MessagesCollector('auth'));
             Debug::addCollector(new MessagesCollector('routing'));
-            Debug::log('Welcome to Luthier-CI ' . LUTHIER_CI_VERSION . '!');
+            Debug::log('Welcome to OpenSID-CI ' . OpenSID_CI_VERSION . '!');
         }
 
         // Compiling all routes

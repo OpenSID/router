@@ -1,21 +1,21 @@
 <?php
 
 /*
- * Luthier CI
+ * OpenSID CI
  *
  * (c) 2018 Ingenia Software C.A
  *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
+ * This file is part of OpenSID CI, a plugin for CodeIgniter 3. See the LICENSE
  * file for copyright information and license details
  */
 
-namespace Luthier\Auth\SimpleAuth;
+namespace OpenSID\Auth\SimpleAuth;
 
-use Luthier\Auth\UserInterface;
-use Luthier\Auth\UserProviderInterface;
-use Luthier\Auth\Exception\UserNotFoundException;
-use Luthier\Auth\Exception\InactiveUserException;
-use Luthier\Auth\Exception\UnverifiedUserException;
+use OpenSID\Auth\UserInterface;
+use OpenSID\Auth\UserProviderInterface;
+use OpenSID\Auth\Exception\UserNotFoundException;
+use OpenSID\Auth\Exception\InactiveUserException;
+use OpenSID\Auth\Exception\UnverifiedUserException;
 
 /**
  * SimpleAuth user provider
@@ -27,7 +27,7 @@ class UserProvider implements UserProviderInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\UserProviderInterface::getUserClass()
+     * @see \OpenSID\Auth\UserProviderInterface::getUserClass()
      */
     public function getUserClass()
     {
@@ -37,7 +37,7 @@ class UserProvider implements UserProviderInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\UserProviderInterface::loadUserByUsername()
+     * @see \OpenSID\Auth\UserProviderInterface::loadUserByUsername()
      */
     final public function loadUserByUsername($username, $password = null)
     {
@@ -83,7 +83,7 @@ class UserProvider implements UserProviderInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\UserProviderInterface::checkUserIsActive()
+     * @see \OpenSID\Auth\UserProviderInterface::checkUserIsActive()
      */
     final public function checkUserIsActive(UserInterface $user)
     {
@@ -96,7 +96,7 @@ class UserProvider implements UserProviderInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\UserProviderInterface::checkUserIsVerified()
+     * @see \OpenSID\Auth\UserProviderInterface::checkUserIsVerified()
      */
     final public function checkUserIsVerified(UserInterface $user)
     {
@@ -117,7 +117,7 @@ class UserProvider implements UserProviderInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\UserProviderInterface::hashPassword()
+     * @see \OpenSID\Auth\UserProviderInterface::hashPassword()
      */
     public function hashPassword($password)
     {
@@ -127,7 +127,7 @@ class UserProvider implements UserProviderInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\UserProviderInterface::verifyPassword()
+     * @see \OpenSID\Auth\UserProviderInterface::verifyPassword()
      */
     public function verifyPassword($password, $hash)
     {

@@ -1,20 +1,20 @@
 <?php
 
 /*
- * Luthier CI
+ * OpenSID CI
  *
  * (c) 2018 Ingenia Software C.A
  *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
+ * This file is part of OpenSID CI, a plugin for CodeIgniter 3. See the LICENSE
  * file for copyright information and license details
  */
 
-namespace Luthier\Auth\SimpleAuth;
+namespace OpenSID\Auth\SimpleAuth;
 
-use Luthier\Auth\Middleware as AuthMiddleware;
-use Luthier\Auth\UserInterface;
-use Luthier\Auth\SimpleAuth\Middleware\RememberMeMiddleware;
-use Luthier\Route;
+use OpenSID\Auth\Middleware as AuthMiddleware;
+use OpenSID\Auth\UserInterface;
+use OpenSID\Auth\SimpleAuth\Middleware\RememberMeMiddleware;
+use OpenSID\Route;
 
 /**
  * SimpleAuth implementation of the Controller-based authentication
@@ -26,7 +26,7 @@ class Middleware extends AuthMiddleware
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\Middleware::preLogin()
+     * @see \OpenSID\Auth\Middleware::preLogin()
      */
     public function preLogin(Route $route)
     {
@@ -55,7 +55,7 @@ class Middleware extends AuthMiddleware
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\Middleware::onLoginSuccess()
+     * @see \OpenSID\Auth\Middleware::onLoginSuccess()
      */
     public function onLoginSuccess(UserInterface $user)
     {
@@ -74,7 +74,7 @@ class Middleware extends AuthMiddleware
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\Middleware::onLoginFailed()
+     * @see \OpenSID\Auth\Middleware::onLoginFailed()
      */
     public function onLoginFailed($username)
     {
@@ -95,7 +95,7 @@ class Middleware extends AuthMiddleware
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\Middleware::onLoginInactiveUser()
+     * @see \OpenSID\Auth\Middleware::onLoginInactiveUser()
      */
     public function onLoginInactiveUser(UserInterface $user)
     {
@@ -105,7 +105,7 @@ class Middleware extends AuthMiddleware
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\Middleware::onLoginUnverifiedUser()
+     * @see \OpenSID\Auth\Middleware::onLoginUnverifiedUser()
      */
     public function onLoginUnverifiedUser(UserInterface $user)
     {
@@ -115,7 +115,7 @@ class Middleware extends AuthMiddleware
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\Middleware::onLogout()
+     * @see \OpenSID\Auth\Middleware::onLogout()
      */
     public function onLogout()
     {

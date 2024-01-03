@@ -1,18 +1,9 @@
 <?php
 
-/*
- * Luthier CI
- *
- * (c) 2018 Ingenia Software C.A
- *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
- * file for copyright information and license details
- */
-
-namespace Luthier;
+namespace OpenSID;
 
 /**
- * All Luthier CI middleware used in the application SHOULD implement this interface, 
+ * All OpenSID CI middleware used in the application SHOULD implement this interface, 
  * in order to be properly detected by the router
  *
  * @author Anderson Salas <anderson@ingenia.me>

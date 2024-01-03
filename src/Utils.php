@@ -1,18 +1,9 @@
 <?php
 
-/*
- * Luthier CI
- *
- * (c) 2018 Ingenia Software C.A
- *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
- * file for copyright information and license details
- */
-
-namespace Luthier;
+namespace OpenSID;
 
 /**
- * Miscellaneous functions used across Luthier CI
+ * Miscellaneous functions used across OpenSID CI
  *  
  * @author Anderson Salas <anderson@ingenia.me>
  */
@@ -121,7 +112,7 @@ class Utils
         }
         else
         {
-            show_error('Unsupported uri protocol', 500, 'Luthier CI boot error');
+            show_error('Unsupported uri protocol', 500, 'OpenSID CI boot error');
         }
 
         if(empty($url))

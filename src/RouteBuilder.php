@@ -1,26 +1,17 @@
 <?php
 
-/*
- * Luthier CI
- *
- * (c) 2018 Ingenia Software C.A
- *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
- * file for copyright information and license details
- */
+namespace OpenSID;
 
-namespace Luthier;
-
-use Luthier\Exception\RouteNotFoundException;
+use OpenSID\Exception\RouteNotFoundException;
 
 /**
- * Defines the Luthier CI routing that will be parsed and sent to CodeIgniter
+ * Defines the OpenSID CI routing that will be parsed and sent to CodeIgniter
  * 
  * @author Anderson Salas <anderson@ingenia.me>
  */
 class RouteBuilder
 {
-    const DEFAULT_CONTROLLER = 'LuthierController';
+    const DEFAULT_CONTROLLER = 'OpenSIDController';
 
     const HTTP_VERBS = ['GET','POST','PUT','PATCH','DELETE','HEAD','OPTIONS','TRACE'];
 
@@ -512,7 +503,7 @@ class RouteBuilder
     /**
      * Gets the static context of the route builder
      * 
-     * (This is used internally by Luthier CI)
+     * (This is used internally by OpenSID CI)
      * 
      * @param string $context Context index
      * 

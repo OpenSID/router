@@ -1,21 +1,21 @@
 <?php
 
 /*
- * Luthier CI
+ * OpenSID CI
  *
  * (c) 2018 Ingenia Software C.A
  *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
+ * This file is part of OpenSID CI, a plugin for CodeIgniter 3. See the LICENSE
  * file for copyright information and license details
  */
 
-namespace Luthier\Auth\SimpleAuth;
+namespace OpenSID\Auth\SimpleAuth;
 
-use Luthier\Auth;
-use Luthier\Auth\ControllerInterface as AuthControllerInterface;
-use Luthier\Auth\SimpleAuth\Middleware as SimpleAuthMiddleware;
-use Luthier\Utils;
-use Luthier\Debug;
+use OpenSID\Auth;
+use OpenSID\Auth\ControllerInterface as AuthControllerInterface;
+use OpenSID\Auth\SimpleAuth\Middleware as SimpleAuthMiddleware;
+use OpenSID\Utils;
+use OpenSID\Debug;
 
 /**
  * SimpleAuth base controller
@@ -40,11 +40,11 @@ class Controller extends \CI_Controller implements AuthControllerInterface
      */
     final private static function lang($index)
     {
-        $langFile = LUTHIER_CI_DIR . '/Resources/SimpleAuth/Translations/' . config_item('language') . '.php';
+        $langFile = OpenSID_CI_DIR . '/Resources/SimpleAuth/Translations/' . config_item('language') . '.php';
 
         if(!file_exists($langFile))
         {
-            $langFile = LUTHIER_CI_DIR . '/Resources/SimpleAuth/Translations/english.php';
+            $langFile = OpenSID_CI_DIR . '/Resources/SimpleAuth/Translations/english.php';
         }
 
         if(self::$lang === null)
@@ -106,7 +106,7 @@ class Controller extends \CI_Controller implements AuthControllerInterface
             $$_name = $_value;
         }
 
-        require LUTHIER_CI_DIR . '/Resources/SimpleAuth/Assets/skins/' . config_item('simpleauth_skin') . '/views/' . $view . '.php';
+        require OpenSID_CI_DIR . '/Resources/SimpleAuth/Assets/skins/' . config_item('simpleauth_skin') . '/views/' . $view . '.php';
 
         $view = ob_get_clean();
 
@@ -132,7 +132,7 @@ class Controller extends \CI_Controller implements AuthControllerInterface
 
         foreach(['css','js','img'] as $folder)
         {
-            $source =  LUTHIER_CI_DIR . '/Resources/SimpleAuth/Assets/skins/' . $skin . '/assets/' . $folder;  
+            $source =  OpenSID_CI_DIR . '/Resources/SimpleAuth/Assets/skins/' . $skin . '/assets/' . $folder;  
 
             if(file_exists($source))
             {
@@ -164,7 +164,7 @@ class Controller extends \CI_Controller implements AuthControllerInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\ControllerInterface::getUserProvider()
+     * @see \OpenSID\Auth\ControllerInterface::getUserProvider()
      */
     final public function getUserProvider()
     {
@@ -174,7 +174,7 @@ class Controller extends \CI_Controller implements AuthControllerInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\ControllerInterface::getMiddleware()
+     * @see \OpenSID\Auth\ControllerInterface::getMiddleware()
      */
     final public function getMiddleware()
     {
@@ -184,7 +184,7 @@ class Controller extends \CI_Controller implements AuthControllerInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\ControllerInterface::login()
+     * @see \OpenSID\Auth\ControllerInterface::login()
      */
     public function login()
     {
@@ -196,7 +196,7 @@ class Controller extends \CI_Controller implements AuthControllerInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\ControllerInterface::logout()
+     * @see \OpenSID\Auth\ControllerInterface::logout()
      */
     public function logout()
     {
@@ -206,7 +206,7 @@ class Controller extends \CI_Controller implements AuthControllerInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\ControllerInterface::signup()
+     * @see \OpenSID\Auth\ControllerInterface::signup()
      */
     public function signup()
     {
@@ -348,7 +348,7 @@ class Controller extends \CI_Controller implements AuthControllerInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\ControllerInterface::emailVerification()
+     * @see \OpenSID\Auth\ControllerInterface::emailVerification()
      */
     public function emailVerification($token)
     {
@@ -424,7 +424,7 @@ class Controller extends \CI_Controller implements AuthControllerInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\ControllerInterface::passwordReset()
+     * @see \OpenSID\Auth\ControllerInterface::passwordReset()
      */
     public function passwordReset()
     {
@@ -555,7 +555,7 @@ class Controller extends \CI_Controller implements AuthControllerInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\Auth\ControllerInterface::passwordResetForm()
+     * @see \OpenSID\Auth\ControllerInterface::passwordResetForm()
      */
     public function passwordResetForm($token)
     {

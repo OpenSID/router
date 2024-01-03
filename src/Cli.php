@@ -1,20 +1,11 @@
 <?php
 
-/*
- * Luthier CI
- *
- * (c) 2018 Ingenia Software C.A
- *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
- * file for copyright information and license details
- */
+namespace OpenSID;
 
-namespace Luthier;
-
-use Luthier\RouteBuilder as Route;
+use OpenSID\RouteBuilder as Route;
 
 /**
- * CLI handler for Luthier CI
+ * CLI handler for OpenSID CI
  * 
  * (Due security reasons, mostly commands defined here are disbled in 'production'
  * and 'testing' environments)
@@ -24,7 +15,7 @@ use Luthier\RouteBuilder as Route;
 class Cli
 {
     /**
-     * Registers all 'luthier make' commands
+     * Registers all 'OpenSID make' commands
      * 
      * @return void
      */
@@ -35,7 +26,7 @@ class Cli
             return;
         }
 
-        Route::group('luthier', function(){
+        Route::group('OpenSID', function(){
             Route::group('make', function(){
                 Route::cli('controller/{(.+):name}',function($name){
                     self::makeContoller($name);
@@ -69,7 +60,7 @@ class Cli
     }
 
     /**
-     * Registers the 'luthier migrate' command
+     * Registers the 'OpenSID migrate' command
      * 
      * @return void
      */
@@ -80,7 +71,7 @@ class Cli
             return;
         }
 
-        Route::group('luthier', function(){
+        Route::group('OpenSID', function(){
             Route::group('migrate', function(){
                 Route::cli('{version?}',function($version = null){
                     self::migrate($version);
@@ -121,16 +112,16 @@ class Cli
      * To create a resource controller with common CRUD operations structure,
      * use the --resource parameter. Example:
      * 
-     *   php index.php luthier make controller Airplanes --resource
+     *   php index.php OpenSID make controller Airplanes --resource
      *
      * (For HMVC users) To specify the module name, use the --module:[name] 
      * parameter. Example:
      * 
-     *   php index.php luthier make controller Invoice --module:MyModule
+     *   php index.php OpenSID make controller Invoice --module:MyModule
      *   
      *   ... you can also create a new resource module controller:
      *   
-     *   php index.php luthier make controller Invoice --module:MyModule --resource
+     *   php index.php OpenSID make controller Invoice --module:MyModule --resource
      *
      * @param  string $name Controller name
      *
@@ -278,7 +269,7 @@ CONTROLLER;
      * (For HMVC users) To specify the module name, use the --module:[name]
      * parameter. Example:
      *
-     *   php index.php luthier make model ModelName --module:MyModule
+     *   php index.php OpenSID make model ModelName --module:MyModule
      *
      * @param  string $name Model name
      *
@@ -336,7 +327,7 @@ MODEL;
      * (For HMVC users) To specify the module name, use the --module:[name]
      * parameter. Example:
      *
-     *   php index.php luthier make helper MyHelper --module:MyModule
+     *   php index.php OpenSID make helper MyHelper --module:MyModule
      *
      * @param  string $name Helper name
      *
@@ -420,7 +411,7 @@ HELPER;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class $name implements Luthier\MiddlewareInterface
+class $name implements OpenSID\MiddlewareInterface
 {
 
     /**

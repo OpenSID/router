@@ -1,8 +1,8 @@
 <p align="center">
-    <img src="https://ingenia.me/images/LuthierCILogo.png" width="100" />
+    <img src="https://ingenia.me/images/OpenSIDCILogo.png" width="100" />
 </p>
 
-**Luthier CI** is an awesome set of core improvements for CodeIgniter 3 that makes the development of APIs (and websites in general) more easy!
+**OpenSID CI** is an awesome set of core improvements for CodeIgniter 3 that makes the development of APIs (and websites in general) more easy!
 
 ## Features
 
@@ -19,10 +19,10 @@
 
 ## Installation
 
-#### Step 1: Get Luthier CI with Composer
+#### Step 1: Get OpenSID CI with Composer
 
 ```
-composer require luthier/luthier
+composer require OpenSID/OpenSID
 ```
 
 #### Step 2: Enable Hooks and Composer autoload
@@ -35,7 +35,7 @@ $config['enable_hooks'] = TRUE;
 $config['composer_autoload'] = TRUE;
 ```
 
-#### Step 3: Connect Luthier CI with CodeIgniter
+#### Step 3: Connect OpenSID CI with CodeIgniter
 
 Set the hooks:
 
@@ -47,10 +47,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // (...)
 
-$hook = Luthier\Hook::getHooks();
+$hook = OpenSID\Hook::getHooks();
 ```
 
-Set the Luthier CI routes:
+Set the OpenSID CI routes:
 
 ```php
 <?php
@@ -60,17 +60,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // (...)
 
-$route = Luthier\Route::getRoutes();
+$route = OpenSID\Route::getRoutes();
 ```
 
 ## Initialization
 
-The first time that Luthier CI runs, several files and folders are created:
+The first time that OpenSID CI runs, several files and folders are created:
 
 * `routes/web.php`: Default HTTP-Based routes
 * `routes/api.php`: AJAX routes
 * `routes/cli.php`: CLI routes
-* `controllers/Luthier.php`: Fake controller, necessary to use some routes
+* `controllers/OpenSID.php`: Fake controller, necessary to use some routes
 * `middleware`: Middleware folder
 
 **Important**: Make sure that your `application` folder has write permission!
@@ -90,7 +90,7 @@ Route::get('foo', 'bar@baz');
 Route::get('blog/{slug}', 'blog@post');
 
 // To make a parameter optional, add a ? just before closing the curly brackets
-// (Luthier CI will make all the fallback routes for you)
+// (OpenSID CI will make all the fallback routes for you)
 Route::get('categories/{primary?}/{secondary?}/{filter?}', 'clients@list');
 
 // The (:any) and (:num) CodeIgniter route placeholders are available to use, with this syntax:
@@ -170,7 +170,7 @@ Route::group('site', ['middleware' => ['Admin']], function(){
 Route::middleware('Admin', 'pre_controller');
 ```
 
-The middleware files must be saved in the `application/middleware` folder. If not exists, you must create it first. A middleware file is any php class that implements the `Luthier\MiddlewareInterface` interface and with a public `run()` method, which is the entry point. It's strongly advised to name all your middleware with CamelCase and avoid name conflicts with your controllers.
+The middleware files must be saved in the `application/middleware` folder. If not exists, you must create it first. A middleware file is any php class that implements the `OpenSID\MiddlewareInterface` interface and with a public `run()` method, which is the entry point. It's strongly advised to name all your middleware with CamelCase and avoid name conflicts with your controllers.
 
 This is an example of a middleware:
 
@@ -189,7 +189,7 @@ class TestMiddleware
 
 ### Documentation
 
-Visit the project [official website](https://luthier.ingenia.me/ci/en/help) (disponible en [español](https://luthier.ingenia.me/ci/es/help))
+Visit the project [official website](https://OpenSID.ingenia.me/ci/en/help) (disponible en [español](https://OpenSID.ingenia.me/ci/es/help))
 
 
 

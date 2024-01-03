@@ -1,15 +1,15 @@
 <?php
 
 /*
- * Luthier CI
+ * OpenSID CI
  *
  * (c) 2018 Ingenia Software C.A
  *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
+ * This file is part of OpenSID CI, a plugin for CodeIgniter 3. See the LICENSE
  * file for copyright information and license details
  */
  
-namespace Luthier\Auth;
+namespace OpenSID\Auth;
 
 /**
  * Describes which methods must implement all the classes used as a representation

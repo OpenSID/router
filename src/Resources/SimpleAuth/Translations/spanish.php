@@ -22,7 +22,7 @@ return [
      * Email messages
      *
      * {first_name}, {verification_url} and {password_reset_url} are provided and parsed
-     * automatically by Luthier-CI
+     * automatically by OpenSID-CI
      */
 
     'email_verification_message' => '<p>¡Hola {first_name}!</p>

@@ -1,15 +1,15 @@
 <?php
 
 /*
- * Luthier CI
+ * OpenSID CI
  *
  * (c) 2018 Ingenia Software C.A
  *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
+ * This file is part of OpenSID CI, a plugin for CodeIgniter 3. See the LICENSE
  * file for copyright information and license details
  */
 
-namespace Luthier\Auth;
+namespace OpenSID\Auth;
 
 /**
  * Describes the methods that must have a controller that authenticates users in 
@@ -29,7 +29,7 @@ interface ControllerInterface
     /**
      * Gets the middleware used by the Controller-based authentication
      * 
-     * @return \Luthier\Auth\Middleware
+     * @return \OpenSID\Auth\Middleware
      */
     public function getMiddleware();
 

@@ -1,15 +1,15 @@
 <?php
 
 /*
- * Luthier CI
+ * OpenSID CI
  *
  * (c) 2018 Ingenia Software C.A
  *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
+ * This file is part of OpenSID CI, a plugin for CodeIgniter 3. See the LICENSE
  * file for copyright information and license details
  */
 
-namespace Luthier\Auth;
+namespace OpenSID\Auth;
 
 /**
  * Describes which methods must implement the classes that retrieves
@@ -40,7 +40,7 @@ interface UserProviderInterface
      * 
      * @param string $password
      * 
-     * @throws \Luthier\Auth\Exception\UnverifiedUserException
+     * @throws \OpenSID\Auth\Exception\UnverifiedUserException
      */
     public function hashPassword($password);
 
@@ -60,7 +60,7 @@ interface UserProviderInterface
      * 
      * @param UserInterface $user
      * 
-     * @throws \Luthier\Auth\Exception\InactiveUserException
+     * @throws \OpenSID\Auth\Exception\InactiveUserException
      * 
      * @return void
      */
@@ -71,7 +71,7 @@ interface UserProviderInterface
      *
      * @param UserInterface $user
      * 
-     * @throws \Luthier\Auth\Exception\UnverifiedUserException
+     * @throws \OpenSID\Auth\Exception\UnverifiedUserException
      *
      * @return void
      */

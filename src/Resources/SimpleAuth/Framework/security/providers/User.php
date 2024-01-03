@@ -12,7 +12,7 @@
  * @licence MIT
  */
 
-use Luthier\Auth\SimpleAuth\User as SimpleAuthUser;
+use OpenSID\Auth\SimpleAuth\User as SimpleAuthUser;
 
 class User extends SimpleAuthUser
 {

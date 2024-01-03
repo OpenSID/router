@@ -6,9 +6,9 @@
  * This routes only will be available under a CLI environment
  */
 
-// To enable Luthier-CI built-in cli commands
+// To enable OpenSID-CI built-in cli commands
 // uncomment the followings lines:
 
-// Luthier\Cli::maker();
-// Luthier\Cli::migrations();
+// OpenSID\Cli::maker();
+// OpenSID\Cli::migrations();
 

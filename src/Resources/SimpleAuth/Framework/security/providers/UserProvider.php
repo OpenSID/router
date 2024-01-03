@@ -17,7 +17,7 @@
  * @licence MIT
  */
 
-use Luthier\Auth\SimpleAuth\UserProvider as SimpleAuthUserProvider;
+use OpenSID\Auth\SimpleAuth\UserProvider as SimpleAuthUserProvider;
 
 class UserProvider extends SimpleAuthUserProvider
 {

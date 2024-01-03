@@ -5,12 +5,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Welcome to your SimpleAuth controller!
  *
- * This class inherits the Luthier-CI base SimpleAuth controller, which contains
+ * This class inherits the OpenSID-CI base SimpleAuth controller, which contains
  * all the authentication logic out-the-box.
  *
  * (And yes, is still a controller, so you can add your own methods)
  */
-class SimpleAuthController extends Luthier\Auth\SimpleAuth\Controller
+class SimpleAuthController extends OpenSID\Auth\SimpleAuth\Controller
 {
 
     /**

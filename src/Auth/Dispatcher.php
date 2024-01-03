@@ -1,20 +1,20 @@
 <?php
 
 /*
- * Luthier CI
+ * OpenSID CI
  *
  * (c) 2018 Ingenia Software C.A
  *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
+ * This file is part of OpenSID CI, a plugin for CodeIgniter 3. See the LICENSE
  * file for copyright information and license details
  */
 
-namespace Luthier\Auth;
+namespace OpenSID\Auth;
 
-use Luthier\Auth\Middleware as AuthMiddlewareInterface;
-use Luthier\Auth;
-use Luthier\Middleware;
-use Luthier\MiddlewareInterface;
+use OpenSID\Auth\Middleware as AuthMiddlewareInterface;
+use OpenSID\Auth;
+use OpenSID\Middleware;
+use OpenSID\MiddlewareInterface;
 
 /**
  * Internal middleware that dispatches the Controller-based authentication
@@ -27,7 +27,7 @@ class Dispatcher implements MiddlewareInterface
     /**
      * {@inheritDoc}
      * 
-     * @see \Luthier\MiddlewareInterface::run()
+     * @see \OpenSID\MiddlewareInterface::run()
      */
     public function run($args)
     {
@@ -45,7 +45,7 @@ class Dispatcher implements MiddlewareInterface
 
         if(!$authMiddleware instanceof AuthMiddlewareInterface)
         {
-            show_error('The auth middleware must inherit the Luthier\Auth\Middleware class');
+            show_error('The auth middleware must inherit the OpenSID\Auth\Middleware class');
         }
 
         ci()->middleware->run($authMiddleware,  Auth::loadUserProvider(ci()->getUserProvider()));

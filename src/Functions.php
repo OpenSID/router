@@ -1,14 +1,5 @@
 <?php
 
-/*
- * Luthier CI
- *
- * (c) 2018 Ingenia Software C.A
- *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
- * file for copyright information and license details
- */
-
 /**
  * Gets a route URL by its name
  * 
@@ -56,23 +47,23 @@ function &ci()
 }
 
 /**
- * Shows a screen with information about Luthier CI
+ * Shows a screen with information about OpenSID CI
  *
  * @return void
  */
-function luthier_info()
+function my_info()
 {
     ob_start();
 
-    require LUTHIER_CI_DIR . '/Resources/About.php';
-    $luthierInfo = ob_get_clean();
+    require OpenSID_CI_DIR . '/Resources/About.php';
+    $OpenSIDInfo = ob_get_clean();
 
-    ci()->output->set_output($luthierInfo);
+    ci()->output->set_output($OpenSIDInfo);
 }
 
 
 /**
- * Triggers the custom Luthier CI 404 error page, with fallback to
+ * Triggers the custom OpenSID CI 404 error page, with fallback to
  * native show_404() function
  *
  * @return void

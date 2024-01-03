@@ -16,7 +16,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-use Luthier\Auth\SimpleAuth\Middleware\SimpleAuthMiddleware as BaseSimpleAuthMiddleware;
+use OpenSID\Auth\SimpleAuth\Middleware\SimpleAuthMiddleware as BaseSimpleAuthMiddleware;
 
 class SimpleAuthMiddleware extends BaseSimpleAuthMiddleware
 {

@@ -1,19 +1,19 @@
 <?php
 
 /*
- * Luthier CI
+ * OpenSID CI
  *
  * (c) 2018 Ingenia Software C.A
  *
- * This file is part of Luthier CI, a plugin for CodeIgniter 3. See the LICENSE
+ * This file is part of OpenSID CI, a plugin for CodeIgniter 3. See the LICENSE
  * file for copyright information and license details
  */
 
-namespace Luthier\Auth\SimpleAuth;
+namespace OpenSID\Auth\SimpleAuth;
 
-use Luthier\Auth;
-use Luthier\Auth\Exception\UserNotFoundException;
-use Luthier\Auth\Exception\PermissionNotFoundException;
+use OpenSID\Auth;
+use OpenSID\Auth\Exception\UserNotFoundException;
+use OpenSID\Auth\Exception\PermissionNotFoundException;
 
 /**
  * SimpleAuth useful methods in a CodeIgniter-compatible library format
