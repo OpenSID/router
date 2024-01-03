@@ -55,10 +55,10 @@ class Hook
             self::postControllerHook($config);
         };
 
-        $hooks['display_override'][] = function()
-        {
-            // self::displayOverrideHook();
-        };
+        // $hooks['display_override'][] = function()
+        // {
+        //     self::displayOverrideHook();
+        // };
 
         return $hooks;
     }
