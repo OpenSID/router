@@ -57,7 +57,7 @@ class Hook
 
         $hooks['display_override'][] = function()
         {
-            self::displayOverrideHook();
+            // self::displayOverrideHook();
         };
 
         return $hooks;
@@ -155,13 +155,13 @@ class Hook
         }
 
         // Debug module
-        if( ENVIRONMENT != 'production' && !$isCli && !$isAjax && in_array('debug', $config['modules']))
-        {
-            Debug::init();
-            Debug::addCollector(new MessagesCollector('auth'));
-            Debug::addCollector(new MessagesCollector('routing'));
-            Debug::log('Welcome to OpenSID-CI ' . OpenSID_CI_VERSION . '!');
-        }
+        // if( ENVIRONMENT != 'production' && !$isCli && !$isAjax && in_array('debug', $config['modules']))
+        // {
+        //     Debug::init();
+        //     Debug::addCollector(new MessagesCollector('auth'));
+        //     Debug::addCollector(new MessagesCollector('routing'));
+        //     Debug::log('Welcome to OpenSID-CI ' . OpenSID_CI_VERSION . '!');
+        // }
 
         // Compiling all routes
         Route::compileAll();
@@ -211,10 +211,10 @@ class Hook
 
         $currentRoute->requestMethod = $requestMethod;
 
-        Debug::log('>>> CURRENT ROUTE:', 'info', 'routing');
-        Debug::log($currentRoute, 'info', 'routing');
-        Debug::log('>>> RAW ROUTING:', 'info', 'routing');
-        Debug::log(Route::$compiled['routes'], 'info', 'routing');
+        // Debug::log('>>> CURRENT ROUTE:', 'info', 'routing');
+        // Debug::log($currentRoute, 'info', 'routing');
+        // Debug::log('>>> RAW ROUTING:', 'info', 'routing');
+        // Debug::log(Route::$compiled['routes'], 'info', 'routing');
 
         Route::setCurrentRoute($currentRoute);
     }
@@ -400,17 +400,22 @@ class Hook
                     foreach($debugBarFlashMessages as $message)
                     {
                         list($message, $type, $collector) = $message;
-                        Debug::log($message, $type, $collector);
+                        log_message('notice', $message);
+                        // Debug::log($message, $type, $collector);
                     }
                 }
             }
 
             if(in_array('auth', $config['modules']))
             {
-                Debug::log('>>> CURRENT AUTH SESSION:','info','auth');
-                Debug::log(Auth::session(), 'info', 'auth');
-                Debug::log('>>> CURRENT USER:','info','auth');
-                Debug::log(Auth::user(), 'info', 'auth');
+                log_message('notice', '>>> CURRENT AUTH SESSION:');
+                // Debug::log('>>> CURRENT AUTH SESSION:','info','auth');
+                log_message('notice', Auth::session());
+                // Debug::log(Auth::session(), 'info', 'auth');
+                log_message('notice', '>>> CURRENT USER:');
+                // Debug::log('>>> CURRENT USER:','info','auth');
+                log_message('notice', Auth::user());
+                // Debug::log(Auth::user(), 'info', 'auth');
             }
         }
 
@@ -493,22 +498,22 @@ class Hook
      */
     private static function displayOverrideHook()
     {
-        $output = ci()->output->get_output();
+        // $output = ci()->output->get_output();
 
-        if(isset(ci()->db))
-        {
-            $queries = ci()->db->queries;
-            if(!empty($queries))
-            {
-                Debug::addCollector(new MessagesCollector('database'));
-                foreach($queries as $query)
-                {
-                    Debug::log($query, 'info', 'database');
-                }
-            }
-        }
+        // if(isset(ci()->db))
+        // {
+        //     $queries = ci()->db->queries;
+        //     if(!empty($queries))
+        //     {
+        //         Debug::addCollector(new MessagesCollector('database'));
+        //         foreach($queries as $query)
+        //         {
+        //             Debug::log($query, 'info', 'database');
+        //         }
+        //     }
+        // }
 
-        Debug::prepareOutput($output);
-        ci()->output->_display($output);
+        // Debug::prepareOutput($output);
+        // ci()->output->_display($output);
     }
 }

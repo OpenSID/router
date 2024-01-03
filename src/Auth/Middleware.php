@@ -38,12 +38,12 @@ abstract class Middleware implements MiddlewareInterface
      */
     final public function run($userProvider)
     {
-        Debug::log(
-            '>>> USING CONTROLLER-BASED AUTH ['
-            . get_class(ci()) . ', '
-            . get_class($userProvider) . ', '
-            . get_class( is_object(ci()->getMiddleware()) ? ci()->getMiddleware() : OpenSIDMiddleware::load(ci()->getMiddleware()) ) . ' ]',
-            'info', 'auth');
+        // Debug::log(
+        //     '>>> USING CONTROLLER-BASED AUTH ['
+        //     . get_class(ci()) . ', '
+        //     . get_class($userProvider) . ', '
+        //     . get_class( is_object(ci()->getMiddleware()) ? ci()->getMiddleware() : OpenSIDMiddleware::load(ci()->getMiddleware()) ) . ' ]',
+        //     'info', 'auth');
 
         $authLoginRoute = config_item('auth_login_route') !== null
             ? config_item('auth_login_route')
@@ -89,9 +89,9 @@ abstract class Middleware implements MiddlewareInterface
             $username = ci()->input->post($usernameField);
             $password = ci()->input->post($passwordField);
 
-            Debug::logFlash('>>> LOGIN ATTEMPT INTERCEPTED', 'info', 'auth');
-            Debug::logFlash('Username: ' . $username, 'info', 'auth');
-            Debug::logFlash('Password: ' . $password . ' [hash: ' . $userProvider->hashPassword($password) . ']', 'info', 'auth');
+            // Debug::logFlash('>>> LOGIN ATTEMPT INTERCEPTED', 'info', 'auth');
+            // Debug::logFlash('Username: ' . $username, 'info', 'auth');
+            // Debug::logFlash('Password: ' . $password . ' [hash: ' . $userProvider->hashPassword($password) . ']', 'info', 'auth');
 
             try
             {
@@ -101,7 +101,7 @@ abstract class Middleware implements MiddlewareInterface
             }
             catch(UserNotFoundException $e)
             {
-                Debug::logFlash('FAILED: ' . UserNotFoundException::class, 'error', 'auth');
+                // Debug::logFlash('FAILED: ' . UserNotFoundException::class, 'error', 'auth');
                 ci()->session->set_flashdata('_auth_messages', [ 'danger' => 'ERR_LOGIN_INVALID_CREDENTIALS' ]);
                 $this->onLoginFailed($username);
 
@@ -109,7 +109,7 @@ abstract class Middleware implements MiddlewareInterface
             }
             catch(InactiveUserException $e)
             {
-                Debug::logFlash('FAILED: ' . InactiveUserException::class, 'error', 'auth');
+                // Debug::logFlash('FAILED: ' . InactiveUserException::class, 'error', 'auth');
                 ci()->session->set_flashdata('_auth_messages', [ 'danger' => 'ERR_LOGIN_INACTIVE_USER' ]);
                 $this->onLoginInactiveUser($user);
 
@@ -117,7 +117,7 @@ abstract class Middleware implements MiddlewareInterface
             }
             catch(UnverifiedUserException $e)
             {
-                Debug::logFlash('FAILED: ' . UnverifiedUserException::class, 'error', 'auth');
+                // Debug::logFlash('FAILED: ' . UnverifiedUserException::class, 'error', 'auth');
                 ci()->session->set_flashdata('_auth_messages', [ 'danger' => 'ERR_LOGIN_UNVERIFIED_USER' ]);
                 $this->onLoginUnverifiedUser($user);
 

@@ -277,7 +277,8 @@ class Auth
 
         if(self::session('validated') === false || $refresh === true)
         {
-            Debug::log('There is a stored user in session. Attempting to validate...', 'info','auth');
+            log_message('notice', 'There is a stored user in session. Attempting to validate...');
+            // Debug::log('There is a stored user in session. Attempting to validate...', 'info','auth');
 
             try
             {
@@ -286,10 +287,12 @@ class Auth
             catch(\Exception $e)
             {
                 $userInstance = null;
-                Debug::log('ERROR! User auth validation failed. Role set to "guest"', 'error','auth');
+                log_message('notice', 'ERROR! User auth validation failed. Role set to "guest"');
+                // Debug::log('ERROR! User auth validation failed. Role set to "guest"', 'error','auth');
             }
 
-            Debug::log('SUCCESS! User validated.', 'info','auth');
+            log_message('notice', 'SUCCESS! User validated.');
+            // Debug::log('SUCCESS! User validated.', 'info','auth');
             self::session('validated', true);
         }
         else

@@ -324,7 +324,7 @@ class Controller extends \CI_Controller implements AuthControllerInterface
                     );
 
 
-                    Debug::log("Confirmation email:\n$emailBody", 'info','auth');
+                    // Debug::log("Confirmation email:\n$emailBody", 'info','auth');
 
                     $this->email->message($emailBody);
                     $this->email->send();
@@ -460,8 +460,8 @@ class Controller extends \CI_Controller implements AuthControllerInterface
                 )->result();
 
 
-                Debug::log('Password reset user: ', 'info', 'auth');
-                Debug::log($user, 'info', 'auth');
+                // Debug::log('Password reset user: ', 'info', 'auth');
+                // Debug::log($user, 'info', 'auth');
 
                 if(!empty($user))
                 {
@@ -473,7 +473,7 @@ class Controller extends \CI_Controller implements AuthControllerInterface
                         ->where('created_at >=', date('Y-m-d H:i:s', time() - (60 * 60 * 2))) // 2 hours
                         ->count_all_results(config_item('simpleauth_password_resets_table'));
 
-                    Debug::log('Password reset count for this email: ' . $requestCount, 'info', 'auth');
+                    // Debug::log('Password reset count for this email: ' . $requestCount, 'info', 'auth');
 
                     if($requestCount < 3)
                     {
@@ -528,19 +528,19 @@ class Controller extends \CI_Controller implements AuthControllerInterface
                             ]
                         );
 
-                        Debug::log("Password reset email:\n$emailBody", 'info','auth');
+                        // Debug::log("Password reset email:\n$emailBody", 'info','auth');
 
                         $this->email->message($emailBody);
                         $this->email->send();
                     }
                     else
                     {
-                        Debug::log("Password reset attempt ignored: limit reached", 'error', 'auth');
+                        // Debug::log("Password reset attempt ignored: limit reached", 'error', 'auth');
                     }
                 }
                 else
                 {
-                    Debug::log("Password reset attempt ignored: user not found", 'error', 'auth');
+                    // Debug::log("Password reset attempt ignored: user not found", 'error', 'auth');
                 }
             }
 
