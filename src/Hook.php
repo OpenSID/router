@@ -86,8 +86,8 @@ class Hook
             mkdir(APPPATH . '/routes');
         }
 
-        if(!file_exists(APPPATH . '/middleware')) {
-            mkdir(APPPATH . '/middleware');
+        if(!file_exists(APPPATH . '/Middleware')) {
+            mkdir(APPPATH . '/Middleware');
         }
 
         if(!file_exists(APPPATH . '/Routes/web.php')) {
@@ -133,15 +133,6 @@ class Hook
         if($isCli) {
             require_once(APPPATH . '/Routes/cli.php');
             Route::set('default_controller', Route::DEFAULT_CONTROLLER);
-        }
-
-        //  [>= v0.3.0] Deleting old OpenSID default controller (if exists)
-        if(file_exists(APPPATH . '/controllers/OpenSID.php')) {
-            unlink(APPPATH . '/controllers/OpenSID.php');
-        }
-
-        if(!file_exists(APPPATH . '/controllers/' . Route::DEFAULT_CONTROLLER . '.php')) {
-            copy(__DIR__ . '/Resources/DefaultController.php', APPPATH . '/controllers/' . Route::DEFAULT_CONTROLLER . '.php');
         }
 
         require_once(__DIR__ . '/Functions.php');

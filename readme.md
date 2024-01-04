@@ -176,7 +176,7 @@ This is an example of a middleware:
 
 ```php
 <?php
-# application/middleware/TestMiddleware.php
+# application/Middleware/TestMiddleware.php
 
 class TestMiddleware
 {
