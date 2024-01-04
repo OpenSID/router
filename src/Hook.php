@@ -100,7 +100,6 @@ class Hook
             // Include all routes web.php from modules
             $moduleDirectories = glob(APPPATH . 'Modules/*', GLOB_ONLYDIR);
             foreach ($moduleDirectories as $moduleDirectory) {
-                log_message('notice', $moduleDirectory . '/Routes/web.php');
                 require_once $moduleDirectory . '/Routes/web.php';
             }
 
