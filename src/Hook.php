@@ -90,11 +90,13 @@ class Hook
             mkdir(APPPATH . '/middleware');
         }
 
-        if(!file_exists(APPPATH . '/routes/web.php')) {
-            copy(__DIR__ . '/Resources/DefaultWebRoutes.php', APPPATH . '/routes/web.php');
+        if(!file_exists(APPPATH . '/Routes/web.php')) {
+            copy(__DIR__ . '/Resources/DefaultWebRoutes.php', APPPATH . '/Routes/web.php');
         }
 
         if($isWeb) {
+            require_once(APPPATH . '/Routes/web.php');
+
             // Include all routes web.php from modules
             $moduleDirectories = glob(APPPATH . 'Modules/*', GLOB_ONLYDIR);
             foreach ($moduleDirectories as $moduleDirectory) {
@@ -102,11 +104,10 @@ class Hook
                 require_once $moduleDirectory . '/Routes/web.php';
             }
 
-            require_once(APPPATH . '/routes/web.php');
         }
 
-        if(!file_exists(APPPATH . '/routes/api.php')) {
-            copy(__DIR__ . '/Resources/DefaultApiRoutes.php', APPPATH . '/routes/api.php');
+        if(!file_exists(APPPATH . '/Routes/api.php')) {
+            copy(__DIR__ . '/Resources/DefaultApiRoutes.php', APPPATH . '/Routes/api.php');
         }
 
         if($isAjax || $isWeb) {
@@ -120,17 +121,17 @@ class Hook
                         require_once $moduleDirectory . '/Routes/api.php';
                     }
 
-                    require_once(APPPATH . '/routes/api.php');
+                    require_once(APPPATH . '/Routes/api.php');
                 }
             );
         }
 
-        if(!file_exists(APPPATH . '/routes/cli.php')) {
-            copy(__DIR__ . '/Resources/DefaultCliRoutes.php', APPPATH . '/routes/cli.php');
+        if(!file_exists(APPPATH . '/Routes/cli.php')) {
+            copy(__DIR__ . '/Resources/DefaultCliRoutes.php', APPPATH . '/Routes/cli.php');
         }
 
         if($isCli) {
-            require_once(APPPATH . '/routes/cli.php');
+            require_once(APPPATH . '/Routes/cli.php');
             Route::set('default_controller', Route::DEFAULT_CONTROLLER);
         }
 
