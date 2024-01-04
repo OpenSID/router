@@ -5,7 +5,6 @@ namespace OpenSID;
 use OpenSID\Exception\RouteNotFoundException;
 use OpenSID\RouteBuilder as Route;
 use OpenSID\Auth\Dispatcher as AuthDispatcher;
-use DebugBar\DataCollector\MessagesCollector;
 
 /**
  * Defines and returns all the required OpenSID CI hooks at framework startup
@@ -106,6 +105,12 @@ class Hook
 
         if($isWeb)
         {
+            // Include all routes web.php from modules
+            $moduleDirectories = glob(APPPATH . 'Modules/*', GLOB_ONLYDIR);
+            foreach ($moduleDirectories as $moduleDirectory) {
+                require_once $moduleDirectory . '/Routes/web.php';
+            }
+
             require_once(APPPATH . '/routes/web.php');
         }
 
@@ -119,6 +124,12 @@ class Hook
             Route::group('/', ['middleware' => [ new RouteAjaxMiddleware() ]],
                 function()
                 {
+                    // Include all routes api.php from modules
+                    $moduleDirectories = glob(APPPATH . 'Modules/*', GLOB_ONLYDIR);
+                    foreach ($moduleDirectories as $moduleDirectory) {
+                        require_once $moduleDirectory . '/Routes/api.php';
+                    }
+
                     require_once(APPPATH . '/routes/api.php');
                 }
             );
