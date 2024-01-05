@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://ingenia.me/images/OpenSIDCILogo.png" width="100" />
+    <img src="https://ingenia.me/images/LuthierCILogo.png" width="100" />
 </p>
 
 **OpenSID CI** is an awesome set of core improvements for CodeIgniter 3 that makes the development of APIs (and websites in general) more easy!
