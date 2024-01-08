@@ -49,10 +49,9 @@ class Hook
             self::postControllerHook($config);
         };
 
-        // $hooks['display_override'][] = function()
-        // {
-        //     self::displayOverrideHook();
-        // };
+        $hooks['display_override'][] = function () {
+            self::displayOverrideHook();
+        };
 
         return $hooks;
     }
@@ -426,22 +425,12 @@ class Hook
      */
     private static function displayOverrideHook()
     {
-        // $output = ci()->output->get_output();
+        $output = ci()->output->get_output();
 
-        // if(isset(ci()->db))
-        // {
-        //     $queries = ci()->db->queries;
-        //     if(!empty($queries))
-        //     {
-        //         Debug::addCollector(new MessagesCollector('database'));
-        //         foreach($queries as $query)
-        //         {
-        //             Debug::log($query, 'info', 'database');
-        //         }
-        //     }
-        // }
+        if (isset(ci()->db)) {
+            $queries = ci()->db->queries;
+        }
 
-        // Debug::prepareOutput($output);
-        // ci()->output->_display($output);
+        ci()->output->_display($output);
     }
 }
