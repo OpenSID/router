@@ -9,7 +9,6 @@
 * Easy installation via hooks
 * Laravel-like routing: prefixes, namespaces, anonymous functions as routes, route groups, CLI routes, named parameters, optional parameters, etc.
 * Middleware support 
-* Authentication library with SimpleAuth template
 * PHP Debug Bar integration (experimental)
 
 ## Requirements
