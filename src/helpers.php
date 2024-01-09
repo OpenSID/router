@@ -5,7 +5,7 @@
  * 
  * @param array
  */
-function hook($config = [])
+function getHooks($config = [])
 {
     return OpenSID\Hook::getHooks($config);
 }
@@ -15,7 +15,7 @@ function hook($config = [])
  * 
  * @return array
  */
-function routes()
+function getRoutes()
 {
     return OpenSID\Route::getRoutes();
 }
